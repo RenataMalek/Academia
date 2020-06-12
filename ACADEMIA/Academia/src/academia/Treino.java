@@ -10,8 +10,9 @@ public class Treino {
 	private String nivel;
 	List<Atividades> atividades = new ArrayList<Atividades>();
 
-	public void adicionarAtividades(Atividades a) {
-		atividades.add(a);
+	public void adicionarAtividades(Atividades atividade) {
+		this.atividades.add(atividade);
+		atividade.treino.add(this);
 	}
 
 	public long getID() {

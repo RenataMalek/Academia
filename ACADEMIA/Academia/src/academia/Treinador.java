@@ -1,8 +1,5 @@
 package academia;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Treinador {
 
 	private long ID;
@@ -10,8 +7,7 @@ public class Treinador {
 	private long CPF;
 	private String telefone;
 	private String codigoAcesso;
-	List<Treino> treino = new ArrayList<Treino>();
-
+	
 	public long getID() {
 		return ID;
 	}

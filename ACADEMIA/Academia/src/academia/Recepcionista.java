@@ -5,18 +5,8 @@ public class Recepcionista {
 	private long ID;
 	private String nome;
 	private long CPF;
-	private long telefone;
+	private String telefone;
 	private String codigoAcesso;
-	
-	
-	public Recepcionista(long iD, String nome, long cPF, long telefone, String codigoAcesso) {
-		this.ID = iD;
-		this.nome = nome;
-		this.CPF = cPF;
-		this.telefone = telefone;
-		this.codigoAcesso = codigoAcesso;
-	}
-	
 
 	public long getID() {
 		return ID;
@@ -42,11 +32,11 @@ public class Recepcionista {
 		CPF = cPF;
 	}
 
-	public long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(long telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

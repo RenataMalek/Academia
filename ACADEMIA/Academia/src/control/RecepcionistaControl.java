@@ -8,22 +8,62 @@ import academia.Contrato;
 
 public class RecepcionistaControl {
 
+	// remover iniciador quando montar o banco de dados; substituir por increment ID
+	long idCli = 0;
+	long idCon = 0;
+
 	List<Cliente> clientes = new ArrayList<Cliente>();
 	List<Contrato> contratos = new ArrayList<Contrato>();
 
-	public void novoCliente(Cliente cli) {
-		clientes.add(cli);
+	// tratamento manter cliente
+
+	public void novoCliente(long ID, long CPF, String nome, String email, String telefone, String endereço) {
+		Cliente c = new Cliente();
+
+		c.setID(ID);
+		c.setCPF(CPF);
+		c.setNome(nome);
+		c.setEmail(email);
+		c.setTelefone(telefone);
+		c.setEndereço(endereço);
+
+		idCli++;
+
+		clientes.add(c);
 	}
 
-	public void novoContrato(Contrato con) {
-		contratos.add(con);
+	public void atualizarCliente(long ID, long CPF, String nome, String email, String telefone, String endereço) {
+		for (Cliente c : clientes) {
+			if (c.getID() == ID) {
+				c.setCPF(CPF);
+				c.setNome(nome);
+				c.setEmail(email);
+				c.setTelefone(telefone);
+				c.setEndereço(endereço);
+			}
+		}
 	}
 
 	public Cliente buscarCliente(int CPF) {
-		Cliente c = new Cliente();
-		c.setCPF(CPF);
-		return c;
+
+		for (Cliente c : clientes) {
+			if (c.getCPF() == CPF) {
+				return c;
+			}
+		}
+
+		return null;
 	}
+
+	public void mostrarTodosClientes() {
+
+		for (Cliente c : clientes) {
+			System.out.println(c);
+		}
+
+	}
+
+	// tratamento manter contrato
 
 	public void novoContrato(int CPF) {
 
